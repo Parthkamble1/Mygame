@@ -34,7 +34,7 @@ function setup(){
  spaceship.scale = 0.4;
 
  spaceship.setCollider("rectangle",0,0,spaceship.width/2,spaceship.height/2);
- spaceship.debug = true
+ //  spaceship.debug = true
  astroied1Grup = new Group();
  astroied2Grup = new Group();
  astroied3Grup = new Group();
@@ -82,31 +82,37 @@ else {spawnAstroied6();}
 
 if(bulletGrup.isTouching(astroied1Grup)){
   astroied1Grup.destroyEach(); 
+  bulletGrup.destroyEach();
   score=score+1 
   destroySound.play();
 }
 if( bulletGrup.isTouching(astroied2Grup)){
     astroied2Grup.destroyEach();
+    bulletGrup.destroyEach();
     score=score+2 
     destroySound.play();
 }
 if(bulletGrup.isTouching(astroied3Grup)){
     astroied3Grup.destroyEach();
+    bulletGrup.destroyEach();
     score=score+3 
     destroySound.play();
 } 
 if(bulletGrup.isTouching(astroied4Grup)){
     astroied4Grup.destroyEach();
+    bulletGrup.destroyEach();
     score=score+4 
     destroySound.play();
 }
 if(bulletGrup.isTouching(astroied5Grup)){
     astroied5Grup.destroyEach();
+    bulletGrup.destroyEach();
     score=score+6 
     destroySound.play();
 } 
 if(bulletGrup.isTouching(astroied6Grup)){
     astroied6Grup.destroyEach();
+    bulletGrup.destroyEach();
     score=score+8 
     destroySound.play();
 }   
@@ -142,6 +148,8 @@ text( "GameOver",620,350)
 textSize(60)
 fill("red")
 text("Press R to Restart", 500,450)
+
+if(keyDown("R")){ reset(); }
 }
  
 if(spaceship.x < 100){
@@ -159,7 +167,6 @@ text("Score="+score,100,190)
 
 text("Lives="+lives,100,150)
 
-reset();
 
 }
 
@@ -170,6 +177,7 @@ function spawnAstroied1(){
     astroied1.velocityY = 2.5
     astroied1Grup.add(astroied1)
     astroied1Grup.setLifetimeEach(800);
+    
 }
 function spawnAstroied2(){
     astroied2 = createSprite(Math.round(random(0,displayWidth)),0);
@@ -221,8 +229,7 @@ function firebullet(){
     bulletGrup.setLifetimeEach(70)
 }
 function reset(){
-    if(keyDown("r")){
-        gameState = "Play"
-     
-    }
+    gameState = "Play";
+    score = 0;
+    lives = 5;
 }
