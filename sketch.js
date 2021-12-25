@@ -116,28 +116,41 @@ if(bulletGrup.isTouching(astroied6Grup)){
     score=score+8 
     destroySound.play();
 }   
-if(astroied1Grup.isTouching(spaceship)|| astroied2Grup.isTouching(spaceship)|| astroied3Grup.isTouching(spaceship)
-|| astroied4Grup.isTouching(spaceship)|| astroied5Grup.isTouching(spaceship)|| astroied6Grup.isTouching(spaceship)){
+if(astroied1Grup.isTouching(spaceship)){
 lives = lives-1
 astroied1Grup.destroyEach();
+}
+if(astroied2Grup.isTouching(spaceship)){
+lives = lives-1
 astroied2Grup.destroyEach();
+}
+if(astroied3Grup.isTouching(spaceship)){
+lives = lives-1
 astroied3Grup.destroyEach();
+}
+if(astroied4Grup.isTouching(spaceship)){
+lives = lives-1
 astroied4Grup.destroyEach();
+}
+if(astroied5Grup.isTouching(spaceship)){
+lives = lives-1
 astroied5Grup.destroyEach();
+}
+if(astroied6Grup.isTouching(spaceship)){
+lives = lives-1
 astroied6Grup.destroyEach();
-bulletGrup.destroyEach();
-    
 }
 if(lives === 0){
     gameState = "End"
 }
-if(score > 100){
-astroied1.velocityY = 3.5;
-astroied2.velocityY = 3.5;
-astroied3.velocityY = 3.5;
-astroied4.velocityY = 3.5;
-astroied5.velocityY = 3.5;
-astroied6.velocityY = 3.5;
+if(score > 15){
+var newScore = score+Math.round((score/50)*0.01)     
+astroied1Grup.setVelocityYEach(newScore);
+astroied2Grup.setVelocityYEach(newScore);
+astroied3Grup.setVelocityYEach(newScore);
+astroied4Grup.setVelocityYEach(newScore);
+astroied5Grup.setVelocityYEach(newScore);
+astroied6Grup.setVelocityYEach(newScore);
 
 }
 }
