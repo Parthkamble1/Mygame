@@ -144,13 +144,13 @@ if(lives === 0){
     gameState = "End"
 }
 if(score > 15){
-var newScore = score+Math.round((score/50)*0.01)     
-astroied1Grup.setVelocityYEach(newScore);
-astroied2Grup.setVelocityYEach(newScore);
-astroied3Grup.setVelocityYEach(newScore);
-astroied4Grup.setVelocityYEach(newScore);
-astroied5Grup.setVelocityYEach(newScore);
-astroied6Grup.setVelocityYEach(newScore);
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         
+astroied1Grup.setVelocityYEach(6+3*score/15);
+astroied2Grup.setVelocityYEach(6+3*score/15);
+astroied3Grup.setVelocityYEach(6+3*score/15);
+astroied4Grup.setVelocityYEach(6+3*score/15);
+astroied5Grup.setVelocityYEach(6+3*score/15);
+astroied6Grup.setVelocityYEach(6+3*score/15);
 
 }
 }
